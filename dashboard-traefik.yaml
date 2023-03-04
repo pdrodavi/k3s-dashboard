@@ -5,6 +5,8 @@ metadata:
   namespace: kubernetes-dashboard
   labels:
     app: kubernetes-dashboard
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
   - host: paas.aks.avlisec.com
@@ -13,5 +15,4 @@ spec:
       - path: /
         backend:
           serviceName: kubernetes-dashboard
-          servicePort: 443
-
+          servicePort: 443     
